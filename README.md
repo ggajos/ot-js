@@ -2,7 +2,8 @@
 ## collection of small, reusable JavaScript components
 
 ## Usage
-// comming soon
+
+For usage examples look at test results page: <link needed>
 
 ## Development
 

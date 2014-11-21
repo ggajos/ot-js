@@ -1,4 +1,3 @@
-var ot = ot || {};
 ot.list = function(array) {
     'use strict';
     if(array === null || array === undefined) {
@@ -12,9 +11,6 @@ ot.list = function(array) {
         return array[ot.range(0, array.length).random()];
     }
 
-    /**
-     @return {string}
-     */
     function describe() {
         return ot.string.builder('list', {
             elements: array

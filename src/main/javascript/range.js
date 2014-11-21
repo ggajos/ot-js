@@ -1,4 +1,3 @@
-var ot = ot || {};
 ot.range = function(a, b) {
     'use strict';
     if(isNaN(a) || isNaN(b) || a === null || b === null) {

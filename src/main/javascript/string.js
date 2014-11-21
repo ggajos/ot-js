@@ -1,4 +1,3 @@
-var ot = ot || {};
 ot.string = {};
 ot.string.builder = function(name, properties) {
     'use strict';

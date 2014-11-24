@@ -19,6 +19,16 @@ ot.test = function(expression) {
         })
     }
 
+    function describe() {
+        return ot.string.builder("test", {
+            expression: expression.toString()
+        }).build()
+    }
+
+    if(ot.method(expression).noReturnStatement()) {
+        ot.log().error("No return statement in " + describe());
+    }
+
     return {
         equals: equals,
         throws: throws

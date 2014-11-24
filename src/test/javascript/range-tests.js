@@ -1,3 +1,4 @@
+var fixtures
 tests.push({
     name: 'range, (given random = 0)',
     before: function () {
@@ -6,60 +7,33 @@ tests.push({
         };
     },
     tests: [
-        {
-            test: function () {
-                return ot.range(-3, 7).random();
-            },
-            equal: -3
-        },
-        {
-            test: function () {
-                return ot.range(0, 1).random();
-            },
-            equal: 0
-        },
-        {
-            test: function () {
-                return ot.range(1, 1).random();
-            },
-            equal: 1
-        },
-        {
-            test: function () {
-                return ot.range(null, 1);
-            },
-            exception: true
-        },
-        {
-            test: function () {
-                return ot.range(1, null);
-            },
-            exception: true
-        },
-        {
-            test: function () {
-                return ot.range('a', null);
-            },
-            exception: true
-        },
-        {
-            test: function () {
-                return ot.range('a');
-            },
-            exception: true
-        },
-        {
-            test: function () {
-                return ot.range();
-            },
-            exception: true
-        },
-        {
-            test: function () {
-                return ot.range(3, 7).describe();
-            },
-            equal: 'range { min: 3, max: 7 }'
-        },
+        ot.test(function () {
+            return ot.range(-3, 7).random();
+        }).equals(-3),
+        ot.test(function () {
+            return ot.range(0, 1).random();
+        }).equals(0),
+        ot.test(function () {
+            return ot.range(1, 1).random();
+        }).equals(1),
+        ot.test(function () {
+            return ot.range(null, 1);
+        }).throws(),
+        ot.test(function () {
+            return ot.range(1, null);
+        }).throws(),
+        ot.test(function () {
+            return ot.range('a', null);
+        }).throws(),
+        ot.test(function () {
+            return ot.range('a');
+        }).throws(),
+        ot.test(function () {
+            return ot.range();
+        }).throws(),
+        ot.test(function () {
+            return ot.range(3, 7).describe();
+        }).equals('range { min: 3, max: 7 }')
     ]
 });
 tests.push({
@@ -69,17 +43,11 @@ tests.push({
             return 1;
         };
     }, tests: [
-        {
-            test: function () {
-                return ot.range(-3, 7).random();
-            },
-            equal: 7
-        },
-        {
-            test: function () {
-                return ot.range(0, 1).random();
-            },
-            equal: 1
-        },
+        ot.test(function () {
+            return ot.range(-3, 7).random();
+        }).equals(7),
+        ot.test(function () {
+            return ot.range(0, 1).random();
+        }).equals(1),
     ]
 });

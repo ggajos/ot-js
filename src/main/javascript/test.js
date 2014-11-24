@@ -26,10 +26,11 @@ ot.test = function(expression) {
 };
 ot.testCase = function(expression, assertion) {
     var testName = expression.toString()
-        .replace(/function \(\).*/g, '')
+        .replace(/function \(\)/g, '')
         .replace(/function\(\)/g, '')
         .replace(/return/g, '')
-        .replace(/;/g, ' | ');
+        .replace(/}/g, '')
+        .replace(/{/g, '');
 
     function name() {
         return testName + assertion().name

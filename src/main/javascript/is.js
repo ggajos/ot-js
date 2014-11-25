@@ -9,6 +9,26 @@ ot.is = function(it) {
         return nameEquals('[object Function]');
     }
 
+    function boolean() {
+        return nameEquals('[object Boolean]');
+    }
+
+    function object() {
+        return nameEquals('[object Object]');
+    }
+
+    function number() {
+        return nameEquals('[object Number]');
+    }
+
+    function string() {
+        return nameEquals('[object String]');
+    }
+
+    function notBlank() {
+        return string() && it.trim().length > 0;
+    }
+
     function notNull() {
         return !(it === undefined || it === null);
     }
@@ -18,8 +38,13 @@ ot.is = function(it) {
     }
 
     return {
-        aFunction: aFunction,
         array: array,
+        aFunction: aFunction,
+        number: number,
+        boolean: boolean,
+        object: object,
+        string: string,
+        notBlank: notBlank,
         notNull: notNull
     };
 };

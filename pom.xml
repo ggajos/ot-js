@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.opentangerine</groupId>
     <artifactId>ot-js</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>pom</packaging>
 
-    <name>TODO</name>
-    <url>TODO</url>
+    <name>ot-js</name>
+    <url>ot-js</url>
 
     <build>
         <plugins>

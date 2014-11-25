@@ -15,7 +15,7 @@
                         });
                         if (!result) {
                             ot.logLevel.withLogDebug(function () {
-                                var result = testCase.run();
+                                testCase.run();
                             });
                         }
                     }

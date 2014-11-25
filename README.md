@@ -9,16 +9,14 @@ For usage examples look at test results page: <link needed>
 
 ### Vision
 
-* Immutable
 * Object Oriented
 
 ### Build
 
 ```sh
-$ cd build
-$ gradlew build
+$ mvn package
 ```
 
-It will produce final library under /dist/ot.js
+It will produce final library under /target/javascript/script.js
 
- crafted by ***Open Tangerine***
+crafted by ***Open Tangerine***

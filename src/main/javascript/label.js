@@ -1,11 +1,8 @@
-ot.string = {};
 ot.label = function(name) {
     'use strict';
+    ot.assertion(name).notNull();
 
     function print(properties) {
-        if(name === null) {
-            throw new Error();
-        }
         var array = [];
         for (var key in properties) {
             if (properties.hasOwnProperty(key)) {

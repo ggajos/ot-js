@@ -1,5 +1,5 @@
 tests.push({
-    name: 'string.builder',
+    name: 'label',
     tests: [
         ot.test(function () {
             return ot.label('name').print({

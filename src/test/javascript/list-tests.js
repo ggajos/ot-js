@@ -26,6 +26,12 @@ tests.push({
         }).throws(),
         ot.test(function () {
             return ot.list([7, 5, 97]).describe();
-        }).equals('list { elements: 7,5,97 }')
+        }).equals('list { elements: 7,5,97 }'),
+        ot.test(function () {
+            return ot.list([]).empty();
+        }).equals(true),
+        ot.test(function () {
+            return ot.list([1]).empty();
+        }).equals(false)
     ]
 });

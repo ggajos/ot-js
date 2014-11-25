@@ -10,6 +10,9 @@ ot.test = function(expression) {
     }
 
     function equals(value) {
+        if(ot.method(expression).noReturnStatement()) {
+            ot.log().error("No return statement in " + describe());
+        }
         return ot.testCase(expression, function() {
             var result = expression();
             return ot.testResult(
@@ -34,10 +37,6 @@ ot.test = function(expression) {
         });
     }
 
-    if(ot.method(expression).noReturnStatement()) {
-        ot.log().error("No return statement in " + describe());
-    }
-
     return {
         ok: ok,
         equals: equals,
@@ -48,7 +47,7 @@ ot.testCase = function(expression, assertion) {
     var testName = expression.toString()
         .replace(/function \(\)/g, '')
         .replace(/function\(\)/g, '')
-        .replace(/return/g, '')
+        .replace(/return/, '')
         .replace(/}/g, '')
         .replace(/{/g, '');
 

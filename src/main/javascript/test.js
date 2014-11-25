@@ -17,7 +17,7 @@ ot.test = function(expression) {
         return ot.testCase(expression, function() {
             var result = expression();
             return ot.testResult(
-                ' === ' + result,
+                ' === ' + (ot.is(result).notBlank() ? result : '<<blank>>'),
                 result === value
             );
         });

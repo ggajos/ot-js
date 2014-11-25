@@ -13,8 +13,9 @@
                         it(testCase.name(), function () {
                             expect(true).toBe(result.success);
                         });
-                        if (!result) {
+                        if (!result.success) {
                             ot.logLevel.withLogDebug(function () {
+                                ot.log().debug("executing test (" + testCase.name() + ") with more verbose logging");
                                 testCase.run();
                             });
                         }

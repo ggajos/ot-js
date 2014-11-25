@@ -33,16 +33,17 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>webminifier-maven-plugin</artifactId>
-                <version>1.0.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>minify-js</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>com.samaxes.maven</groupId>
+                <artifactId>minify-maven-plugin</artifactId>
+                <version>1.7.4</version>
+                <configuration>
+                    <jsSourceDir>../javascript</jsSourceDir>
+                    <verbose>true</verbose>
+                    <jsSourceIncludes>
+                        <jsSourceInclude>**</jsSourceInclude>
+                    </jsSourceIncludes>
+                    <jsEngine>CLOSURE</jsEngine>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.cj.jshintmojo</groupId>

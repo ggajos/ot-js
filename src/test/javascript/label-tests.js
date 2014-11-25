@@ -17,7 +17,7 @@
             }).equals('name {  }'),
             ot.test(function () {
                 return ot.label(null).print(null);
-            }).throws()
+            }).exception()
         ]
     });
 }());

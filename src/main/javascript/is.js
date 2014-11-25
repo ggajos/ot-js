@@ -1,7 +1,7 @@
 ot.is = function(it) {
     'use strict';
 
-    function array() {
+    function aArray() {
         return nameEquals('[object Array]');
     }
 
@@ -9,24 +9,24 @@ ot.is = function(it) {
         return nameEquals('[object Function]');
     }
 
-    function boolean() {
+    function aBoolean() {
         return nameEquals('[object Boolean]');
     }
 
-    function object() {
+    function aObject() {
         return nameEquals('[object Object]');
     }
 
-    function number() {
+    function aNumber() {
         return nameEquals('[object Number]');
     }
 
-    function string() {
+    function aString() {
         return nameEquals('[object String]');
     }
 
     function notBlank() {
-        return string() && it.replace(/^\s+|\s+$/g, '').length > 0;
+        return aString() && it.replace(/^\s+|\s+$/g, '').length > 0;
     }
 
     function notNull() {
@@ -38,12 +38,12 @@ ot.is = function(it) {
     }
 
     return {
-        array: array,
+        array: aArray,
         aFunction: aFunction,
-        number: number,
-        boolean: boolean,
-        object: object,
-        string: string,
+        aNumber: aNumber,
+        aBoolean: aBoolean,
+        aObject: aObject,
+        aString: aString,
         notBlank: notBlank,
         notNull: notNull
     };

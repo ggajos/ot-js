@@ -40,19 +40,19 @@
             }).equals(1),
             ot.test(function () {
                 return ot.range(null, 1);
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.range(1, null);
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.range('a', null);
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.range('a');
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.range();
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.range(3, 7).describe();
             }).equals('range { min: 3, max: 7 }')

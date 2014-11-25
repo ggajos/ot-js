@@ -19,13 +19,13 @@
             ot.test(function () {
                 ifRandomReturnsZero();
                 return ot.list([]).random();
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.list(null);
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.list();
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.list([7, 5, 97]).describe();
             }).equals('list { elements: 7,5,97 }'),

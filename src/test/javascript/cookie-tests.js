@@ -22,10 +22,10 @@
             }).equals(false),
             ot.test(function () {
                 return ot.cookie();
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.cookie('');
-            }).throws()
+            }).exception()
         ]
     });
 }());

@@ -23,7 +23,7 @@ ot.test = function(expression) {
         });
     }
 
-    function throws() {
+    function exception() {
         return ot.testCase(expression, function() {
             return ot.testResult(
                 'should throw exception',
@@ -35,7 +35,7 @@ ot.test = function(expression) {
     return {
         ok: ok,
         equals: equals,
-        throws: throws
+        exception: exception
     };
 };
 ot.testCase = function(expression, assertion) {

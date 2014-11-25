@@ -14,10 +14,10 @@
             }).equals(false),
             ot.test(function () {
                 return ot.method('');
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.method();
-            }).throws(),
+            }).exception(),
             ot.test(function () {
                 return ot.method(function () {
                     return 1;

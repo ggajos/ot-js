@@ -26,46 +26,46 @@
             }).equals(false),
 
             ot.test(function () {
-                return ot.is([1, 2, 3]).string();
+                return ot.is([1, 2, 3]).aString();
             }).equals(false),
             ot.test(function () {
-                return ot.is('').string();
+                return ot.is('').aString();
             }).equals(true),
             ot.test(function () {
-                return ot.is(null).string();
+                return ot.is(null).aString();
             }).equals(false),
 
             ot.test(function () {
-                return ot.is(1).number();
+                return ot.is(1).aNumber();
             }).equals(true),
             ot.test(function () {
-                return ot.is('').number();
+                return ot.is('').aNumber();
             }).equals(false),
             ot.test(function () {
-                return ot.is(null).number();
+                return ot.is(null).aNumber();
             }).equals(false),
 
             ot.test(function () {
-                return ot.is(false).boolean();
+                return ot.is(false).aBoolean();
             }).equals(true),
             ot.test(function () {
-                return ot.is('').boolean();
+                return ot.is('').aBoolean();
             }).equals(false),
             ot.test(function () {
-                return ot.is(null).boolean();
+                return ot.is(null).aBoolean();
             }).equals(false),
 
             ot.test(function () {
-                return ot.is({a: 'a'}).object();
+                return ot.is({a: 'a'}).aObject();
             }).equals(true),
             ot.test(function () {
-                return ot.is(function() {}).object();
+                return ot.is(function() {}).aObject();
             }).equals(false),
             ot.test(function () {
-                return ot.is('').object();
+                return ot.is('').aObject();
             }).equals(false),
             ot.test(function () {
-                return ot.is(null).object();
+                return ot.is(null).aObject();
             }).equals(false),
 
             ot.test(function () {

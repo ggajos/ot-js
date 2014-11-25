@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
 
     <name>ot-js</name>
-    <url>ot-js</url>
+    <url>?</url>
 
     <build>
         <plugins>

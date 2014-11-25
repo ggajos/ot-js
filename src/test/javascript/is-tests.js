@@ -15,8 +15,8 @@
 
             ot.test(function () {
                 return ot.is(function () {
-                    "body"
-                }).aFunction()
+                    'body';
+                }).aFunction();
             }).equals(true),
             ot.test(function () {
                 return ot.is('').aFunction();
@@ -29,7 +29,7 @@
                 return ot.is([1, 2, 3]).string();
             }).equals(false),
             ot.test(function () {
-                return ot.is("").string();
+                return ot.is('').string();
             }).equals(true),
             ot.test(function () {
                 return ot.is(null).string();
@@ -39,7 +39,7 @@
                 return ot.is(1).number();
             }).equals(true),
             ot.test(function () {
-                return ot.is("").number();
+                return ot.is('').number();
             }).equals(false),
             ot.test(function () {
                 return ot.is(null).number();
@@ -49,7 +49,7 @@
                 return ot.is(false).boolean();
             }).equals(true),
             ot.test(function () {
-                return ot.is("").boolean();
+                return ot.is('').boolean();
             }).equals(false),
             ot.test(function () {
                 return ot.is(null).boolean();
@@ -62,7 +62,7 @@
                 return ot.is(function() {}).object();
             }).equals(false),
             ot.test(function () {
-                return ot.is("").object();
+                return ot.is('').object();
             }).equals(false),
             ot.test(function () {
                 return ot.is(null).object();

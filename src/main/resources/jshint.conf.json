@@ -63,6 +63,7 @@
         "expect": false,
         "describe": false,
         "tests": false,
-        "console": false
+        "console": false,
+        "document": false
     }
 }

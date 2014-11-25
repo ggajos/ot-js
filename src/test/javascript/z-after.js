@@ -15,7 +15,11 @@
                         });
                         if (!result.success) {
                             ot.logLevel.withLogDebug(function () {
-                                ot.log().debug("executing test (" + testCase.name() + ") with more verbose logging");
+                                ot.log().debug([
+                                    'executing test (',
+                                    testCase.name(),
+                                    ') with more verbose logging'
+                                ].join());
                                 testCase.run();
                             });
                         }

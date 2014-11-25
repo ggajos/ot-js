@@ -3,7 +3,8 @@ ot.list = function(it) {
     ot.assertion(it).check(ot.is(it).array(), 'Argument have to be an array');
 
     function random() {
-        ot.assertion(it).check(it.length > 0, 'Array have to contain at least one element');
+        ot.assertion(it).check(it.length > 0,
+            'Array have to contain at least one element');
         return it[ot.range(0, it.length).random()];
     }
 

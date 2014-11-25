@@ -1,4 +1,5 @@
 ot.is = function(it) {
+    'use strict';
 
     function array() {
         return nameEquals('[object Array]');
@@ -20,5 +21,5 @@ ot.is = function(it) {
         aFunction: aFunction,
         array: array,
         notNull: notNull
-    }
+    };
 };

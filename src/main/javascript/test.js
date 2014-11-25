@@ -1,39 +1,34 @@
 ot.test = function(expression) {
+    'use strict';
 
     function ok() {
         return ot.testCase(expression, function() {
             return ot.testResult(
-                "silent execution",
+                'silent execution',
                 !ot.method(expression).isThrowingException()
             );
-        })
+        });
     }
 
     function equals(value) {
         if(ot.method(expression).noReturnStatement()) {
-            ot.log().error("No return statement in " + describe());
+            ot.log().error('No return statement in ' + describe());
         }
         return ot.testCase(expression, function() {
             var result = expression();
             return ot.testResult(
-                " == " + result,
-                result == value
-            )
-        })
+                ' == ' + result,
+                result === value
+            );
+        });
     }
 
     function throws() {
         return ot.testCase(expression, function() {
             return ot.testResult(
-                "should throw exception",
+                'should throw exception',
                 ot.method(expression).isThrowingException()
             );
-        })
-    }
-
-    function describe() {
-        return ot.label("test").print({
-            expression: expression.toString()
         });
     }
 
@@ -41,9 +36,10 @@ ot.test = function(expression) {
         ok: ok,
         equals: equals,
         throws: throws
-    }
+    };
 };
 ot.testCase = function(expression, assertion) {
+    'use strict';
     var testName = expression.toString()
         .replace(/function \(\)/g, '')
         .replace(/function\(\)/g, '')
@@ -52,7 +48,7 @@ ot.testCase = function(expression, assertion) {
         .replace(/{/g, '');
 
     function name() {
-        return testName + assertion().name
+        return testName + assertion().name;
     }
 
     function run() {
@@ -62,11 +58,12 @@ ot.testCase = function(expression, assertion) {
     return {
         name: name,
         run: run
-    }
+    };
 };
 ot.testResult = function(name, success) {
+    'use strict';
     return {
         name: name,
         success: success
-    }
-}
+    };
+};

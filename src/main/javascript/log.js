@@ -1,12 +1,13 @@
 ot.log = function() {
+    'use strict';
     var levels = {
-         10: "[ DEBUG ]",
-         20: "[WARNING]",
-        100: "[ ERROR ]"
+        10:  '[ DEBUG ]',
+        20:  '[WARNING]',
+        100: '[ ERROR ]'
     };
 
     function debug(msg) {
-        log(10, msg)
+        log(10, msg);
     }
 
     function warning(msg) {
@@ -27,9 +28,10 @@ ot.log = function() {
         warning: warning,
         error: error,
         debug: debug
-    }
+    };
 };
 ot.logLevel = (function() {
+    'use strict';
     var currentLevel = 20;
 
     function override(value) {
@@ -43,6 +45,14 @@ ot.logLevel = (function() {
         currentLevel = oldLevel;
     }
 
+    function withNoLog(f) {
+        withLevel(9999, f);
+    }
+
+    function withLogDebug(f) {
+        withLevel(0, f);
+    }
+
     function current() {
         return currentLevel;
     }
@@ -50,6 +60,7 @@ ot.logLevel = (function() {
     return {
         current: current,
         override: override,
-        withLevel: withLevel
-    }
+        withNoLog: withNoLog,
+        withLogDebug: withLogDebug
+    };
 }());

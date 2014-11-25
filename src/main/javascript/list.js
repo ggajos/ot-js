@@ -14,7 +14,7 @@ ot.list = function(it) {
     }
 
     function empty() {
-        return it.length == 0;
+        return it.length === 0;
     }
 
     return {

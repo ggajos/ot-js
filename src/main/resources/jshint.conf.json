@@ -61,6 +61,8 @@
         "ot": true,
         "it": false,
         "expect": false,
-        "describe": false
+        "describe": false,
+        "tests": false,
+        "console": false
     }
 }

@@ -26,7 +26,7 @@ ot.is = function(it) {
     }
 
     function notBlank() {
-        return string() && it.trim().length > 0;
+        return string() && it.replace(/^\s+|\s+$/g, '').length > 0;
     }
 
     function notNull() {

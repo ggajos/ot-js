@@ -22,7 +22,7 @@ ot.cookie = function (name) {
         var token = name + '=';
         var ca = document.cookie.split(';');
         for(var i=0; i<ca.length; i+= 1) {
-            var c = ca[i].trim();
+            var c = ca[i].replace(/^\s+|\s+$/g, '');
             if (c.indexOf(token) === 0) {
                 ot.log().debug('reading cookie: ' + c);
                 c = c.substring(token.length, c.length);

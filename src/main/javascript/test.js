@@ -1,5 +1,14 @@
 ot.test = function(expression) {
 
+    function ok() {
+        return ot.testCase(expression, function() {
+            return ot.testResult(
+                "silent execution",
+                !ot.method(expression).isThrowingException()
+            );
+        })
+    }
+
     function equals(value) {
         return ot.testCase(expression, function() {
             var result = expression();
@@ -20,9 +29,9 @@ ot.test = function(expression) {
     }
 
     function describe() {
-        return ot.string.builder("test", {
+        return ot.label("test").print({
             expression: expression.toString()
-        }).build()
+        });
     }
 
     if(ot.method(expression).noReturnStatement()) {
@@ -30,6 +39,7 @@ ot.test = function(expression) {
     }
 
     return {
+        ok: ok,
         equals: equals,
         throws: throws
     }

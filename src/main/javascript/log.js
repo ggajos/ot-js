@@ -3,7 +3,7 @@ ot.log = function() {
          10: "[ DEBUG ]",
          20: "[WARNING]",
         100: "[ ERROR ]"
-    }
+    };
 
     function debug(msg) {
         log(10, msg)
@@ -18,7 +18,9 @@ ot.log = function() {
     }
 
     function log(level, msg) {
-        console.log(levels[level], msg);
+        if(level >= ot.logLevel.current()) {
+            console.log(levels[level], msg);
+        }
     }
 
     return {
@@ -27,3 +29,27 @@ ot.log = function() {
         debug: debug
     }
 };
+ot.logLevel = (function() {
+    var currentLevel = 20;
+
+    function override(value) {
+        currentLevel = value;
+    }
+
+    function withLevel(value, f) {
+        var oldLevel = currentLevel;
+        currentLevel = value;
+        f();
+        currentLevel = oldLevel;
+    }
+
+    function current() {
+        return currentLevel;
+    }
+
+    return {
+        current: current,
+        override: override,
+        withLevel: withLevel
+    }
+}());

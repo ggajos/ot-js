@@ -1,24 +1,25 @@
-ot.list = function(array) {
+ot.list = function(it) {
     'use strict';
-    if(array === null || array === undefined) {
-        throw Error('array argument cannot be null');
-    }
+    ot.assertion(it).array();
 
     function random() {
-        if(array.length === 0) {
-            throw Error('Unable to get random element from list');
-        }
-        return array[ot.range(0, array.length).random()];
+        ot.assertion(it).notEmptyArray();
+        return it[ot.range(0, it.length).random()];
     }
 
     function describe() {
-        return ot.string.builder('list', {
-            elements: array
-        }).build();
+        return ot.label('list').print({
+            elements: it
+        });
+    }
+
+    function empty() {
+        return it.length == 0;
     }
 
     return {
-        random: random,
-        describe: describe
+        empty: empty,
+        describe: describe,
+        random: random
     };
 };

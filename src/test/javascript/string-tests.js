@@ -2,19 +2,19 @@ tests.push({
     name: 'string.builder',
     tests: [
         ot.test(function () {
-            return ot.string.builder('name', {
+            return ot.label('name').print({
                 min: 10,
                 max: -40
-            }).build();
+            });
         }).equals('name { min: 10, max: -40 }'),
         ot.test(function () {
-            return ot.string.builder('name', {}).build();
+            return ot.label('name').print({});
         }).equals('name {  }'),
         ot.test(function () {
-            return ot.string.builder('name', null).build();
+            return ot.label('name').print(null);
         }).equals('name {  }'),
         ot.test(function () {
-            return ot.string.builder(null, null).build();
+            return ot.label(null).print(null);
         }).throws()
     ]
 });

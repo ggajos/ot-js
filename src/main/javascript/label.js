@@ -1,8 +1,8 @@
 ot.string = {};
-ot.string.builder = function(name, properties) {
+ot.label = function(name) {
     'use strict';
 
-    function build() {
+    function print(properties) {
         if(name === null) {
             throw new Error();
         }
@@ -16,6 +16,6 @@ ot.string.builder = function(name, properties) {
     }
 
     return {
-        build: build
+        print: print
     };
 };

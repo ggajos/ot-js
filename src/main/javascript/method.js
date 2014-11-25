@@ -8,6 +8,7 @@ ot.method = function(f) {
         try {
             f();
         } catch(err) {
+            ot.log().debug(err);
             return true;
         }
         return false;

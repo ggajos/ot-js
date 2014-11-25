@@ -14,14 +14,11 @@ ot.range = function(a, b) {
         return Math.floor(min + Math.floor(Math.random() * (distance())));
     }
 
-    /**
-     @return {string}
-     */
     function describe() {
-        return ot.string.builder('range', {
+        return ot.label('range').print({
             min: min,
             max: max
-        }).build();
+        });
     }
 
     return {

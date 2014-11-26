@@ -1,13 +1,13 @@
-ot.validate = function () {
+ot.validate = function (it) {
     'use strict';
 
-    function that(condition, failureMessage) {
-        if (!condition) {
+    function isTrue(failureMessage) {
+        if (!it) {
             throw new Error(failureMessage);
         }
     }
 
     return {
-        that: that
+        isTrue: isTrue
     };
 };

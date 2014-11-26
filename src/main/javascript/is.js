@@ -1,4 +1,4 @@
-ot.is = function(it) {
+ot.is = function(object) {
     'use strict';
 
     function aArray() {
@@ -18,7 +18,7 @@ ot.is = function(it) {
     }
 
     function aNull() {
-        return it === undefined || it === null;
+        return object === undefined || object === null;
     }
 
     function aNumber() {
@@ -30,7 +30,7 @@ ot.is = function(it) {
     }
 
     function nameEquals(string) {
-        return Object.prototype.toString.call(it) === string;
+        return Object.prototype.toString.call(object) === string;
     }
 
     return {

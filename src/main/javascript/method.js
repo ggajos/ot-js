@@ -1,14 +1,15 @@
-ot.method = function(f) {
+ot.method = function(jsFunction) {
     'use strict';
-    ot.validate().that(ot.is(f).aFunction(), "You have to provide a function");
+    ot.validate().that(ot.is(jsFunction).aFunction(),
+        'You have to provide a function');
 
     function noReturnStatement() {
-        return f.toString().indexOf('return') < 0;
+        return jsFunction.toString().indexOf('return') < 0;
     }
 
     function isThrowingException() {
         try {
-            f();
+            jsFunction();
         } catch(err) {
             ot.log().debug('Method thrown exception', err);
             return true;

@@ -88,7 +88,7 @@
             }).equals('1,2,3'),
 
             ot.test(function () {
-                return ot.string(' a ').trim();
+                return ot.string(' a ').trim().value();
             }).equals('a'),
         ]
     });

@@ -1,12 +1,12 @@
 ot.string = function (it) {
     'use strict';
 
-    function blank() {
-        return trim() === '';
+    function isBlank() {
+        return trim().value() === '';
     }
 
     function trim() {
-        return value().replace(/^\s+|\s+$/g, '');
+        return ot.string(value().replace(/^\s+|\s+$/g, ''));
     }
 
     function describe() {
@@ -17,7 +17,7 @@ ot.string = function (it) {
         if (it === '') {
             return '<empty string>';
         }
-        if (blank()) {
+        if (isBlank()) {
             return '<blank string>';
         }
         if (ot.is(it).aString()) {
@@ -35,7 +35,7 @@ ot.string = function (it) {
     }
 
     return {
-        blank: blank,
+        blank: isBlank,
         trim: trim,
         describe: describe,
         value: value

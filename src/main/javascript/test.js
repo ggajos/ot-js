@@ -24,7 +24,10 @@ ot.test = function(expression) {
                 );
             } else {
                 return ot.testResult(
-                    [' === [', result, '] but expected is [', value, ']'].join(''),
+                    [
+                        ' === [', result,
+                        '] but expected is [', value, ']'
+                    ].join(''),
                     success
                 );
             }

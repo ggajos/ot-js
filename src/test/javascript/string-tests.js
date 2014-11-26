@@ -32,7 +32,7 @@
             }).equals('4.5'),
             ot.test(function () {
                 return ot.string([1, 2, 3]).describe();
-            }).equals('[1,2,3]'),
+            }).equals('<1,2,3>'),
             ot.test(function () {
                 return ot.string('text').describe();
             }).equals('"text"'),

@@ -10,23 +10,15 @@ ot.string = function (it) {
     }
 
     function describe() {
-        if (it === undefined) {
-            return '<undefined>';
-        }
-        if (it === null) {
-            return '<null>';
+        var is = ot.is(it);
+        if(is.aNull() || is.aBoolean() || is.aArray()) {
+            return '<' + it + '>';
         }
         if (it === '') {
             return '<empty string>';
         }
         if (blank()) {
             return '<blank string>';
-        }
-        if (it === true || it === false) {
-            return ['<', it, '>'].join('');
-        }
-        if (ot.is(it).aArray()) {
-            return '[' + it + ']';
         }
         if (ot.is(it).aString()) {
             return ['"', it.toString(), '"'].join('');

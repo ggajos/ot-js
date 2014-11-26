@@ -1,6 +1,6 @@
 ot.list = function(it) {
     'use strict';
-    ot.assertion(it).check(ot.is(it).array(), 'Argument have to be an array');
+    ot.assertion(it).check(ot.is(it).aArray(), 'Argument have to be an array');
 
     function random() {
         ot.assertion(it).check(it.length > 0,

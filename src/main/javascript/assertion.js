@@ -3,7 +3,7 @@ ot.assertion = function (it) {
 
     function check(assertion, message) {
         if (!assertion) {
-            throw new Error(['[', it, '] - ', message].join(' '));
+            throw new Error([message, ', provided: ', it].join(' '));
         }
     }
 

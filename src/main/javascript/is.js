@@ -38,7 +38,7 @@ ot.is = function(it) {
     }
 
     return {
-        array: aArray,
+        aArray: aArray,
         aFunction: aFunction,
         aNumber: aNumber,
         aBoolean: aBoolean,

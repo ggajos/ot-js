@@ -4,13 +4,13 @@
         name: 'is',
         tests: [
             ot.test(function () {
-                return ot.is([1, 2, 3]).array();
+                return ot.is([1, 2, 3]).aArray();
             }).equals(true),
             ot.test(function () {
-                return ot.is('').array();
+                return ot.is('').aArray();
             }).equals(false),
             ot.test(function () {
-                return ot.is(undefined).array();
+                return ot.is(undefined).aArray();
             }).equals(false),
 
             ot.test(function () {

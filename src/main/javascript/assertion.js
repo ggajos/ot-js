@@ -1,13 +1,13 @@
-ot.assertion = function (it) {
+ot.validate = function (it) {
     'use strict';
 
-    function check(assertion, message) {
+    function that(assertion, message) {
         if (!assertion) {
             throw new Error([message, ', provided: ', it].join(' '));
         }
     }
 
     return {
-        check: check
+        that: that
     };
 };

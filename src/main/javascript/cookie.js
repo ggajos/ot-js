@@ -1,6 +1,6 @@
 ot.cookie = function (name) {
     'use strict';
-    ot.assertion(name).check(!ot.string(name).isBlank(),
+    ot.validate(name).that(!ot.string(name).isBlank(),
         'Name of cookie should be provided');
 
     function write(value, date) {

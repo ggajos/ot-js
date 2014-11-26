@@ -9,6 +9,10 @@ ot.string = function (it) {
         return ot.string(value().replace(/^\s+|\s+$/g, ''));
     }
 
+    function wrap(wrapper) {
+        return ot.string([wrapper, value(), wrapper].join(''));
+    }
+
     function describe() {
         var is = ot.is(it);
         if(is.aNull() || is.aBoolean() || is.aArray()) {
@@ -21,7 +25,7 @@ ot.string = function (it) {
             return '<blank string>';
         }
         if (ot.is(it).aString()) {
-            return ['"', it.toString(), '"'].join('');
+            return ot.string(it).wrap('"').value();
         }
         return it.toString();
     }
@@ -35,8 +39,9 @@ ot.string = function (it) {
     }
 
     return {
-        blank: isBlank,
+        isBlank: isBlank,
         trim: trim,
+        wrap: wrap,
         describe: describe,
         value: value
     };

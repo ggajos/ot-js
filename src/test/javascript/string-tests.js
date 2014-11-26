@@ -38,22 +38,22 @@
             }).equals('"text"'),
 
             ot.test(function () {
-                return ot.string().blank();
+                return ot.string().isBlank();
             }).equals(true),
             ot.test(function () {
-                return ot.string(4.5).blank();
+                return ot.string(4.5).isBlank();
             }).equals(false),
             ot.test(function () {
-                return ot.string(false).blank();
+                return ot.string(false).isBlank();
             }).equals(false),
             ot.test(function () {
-                return ot.string('').blank();
+                return ot.string('').isBlank();
             }).equals(true),
             ot.test(function () {
-                return ot.string('   ').blank();
+                return ot.string('   ').isBlank();
             }).equals(true),
             ot.test(function () {
-                return ot.string('  a ').blank();
+                return ot.string('  a ').isBlank();
             }).equals(false),
 
             ot.test(function () {
@@ -89,6 +89,13 @@
 
             ot.test(function () {
                 return ot.string(' a ').trim().value();
+            }).equals('a'),
+
+            ot.test(function () {
+                return ot.string('a').wrap('X').value();
+            }).equals('XaX'),
+            ot.test(function () {
+                return ot.string('a').wrap().value();
             }).equals('a'),
         ]
     });

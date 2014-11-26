@@ -5,7 +5,7 @@ Goal of this library is to provide truly object oriented, reusable toolset of ob
 
 ### Usage
 
-[Download ltest stable release](https://github.com/ggajos/ot-js/releases/latest) or use CDN:
+[Download latest stable release](https://github.com/ggajos/ot-js/releases/latest) or use CDN:
 
 ```html
 <script src='//cdn.rawgit.com/ggajos/ot-js/releases/download/0.1.0/ot-js.min.js'></script>

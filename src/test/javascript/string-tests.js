@@ -32,7 +32,8 @@
             }).equals('4.5'),
             ot.test(function () {
                 return ot.string([1, 2, 3]).describe();
-            }).equals('list { elements: 1,2,3 }'),
+            }).equals('1,2,3'),
+
             ot.test(function () {
                 return ot.string(4.5).blank();
             }).equals(false),
@@ -48,6 +49,37 @@
             ot.test(function () {
                 return ot.string('  a ').blank();
             }).equals(false),
+
+            ot.test(function () {
+                return ot.string().value();
+            }).equals(''),
+            ot.test(function () {
+                return ot.string(null).value();
+            }).equals(''),
+            ot.test(function () {
+                return ot.string(undefined).value();
+            }).equals(''),
+            ot.test(function () {
+                return ot.string('').value();
+            }).equals(''),
+            ot.test(function () {
+                return ot.string('     ').value();
+            }).equals('     '),
+            ot.test(function () {
+                return ot.string(true).value();
+            }).equals('true'),
+            ot.test(function () {
+                return ot.string(false).value();
+            }).equals('false'),
+            ot.test(function () {
+                return ot.string(4).value();
+            }).equals('4'),
+            ot.test(function () {
+                return ot.string(4.5).value();
+            }).equals('4.5'),
+            ot.test(function () {
+                return ot.string([1, 2, 3]).value();
+            }).equals('1,2,3'),
         ]
     });
 }());

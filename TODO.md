@@ -1,4 +1,3 @@
-* introduce ot.string
 * replace notblank trim workaround
 * remove assertion class
 * make <<blank>> representations with more sense

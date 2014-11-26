@@ -19,13 +19,22 @@ ot.string = function (it) {
             return '<blank string>';
         }
         if (ot.is(it).aArray()) {
-            return ot.list(it).describe();
+            return '' + it;
         }
         return it.toString();
     }
 
+    function value() {
+        if(it === undefined || it === null) {
+            return ''
+        } else {
+            return '' + it;
+        }
+    }
+
     return {
         blank: blank,
-        describe: describe
+        describe: describe,
+        value: value
     };
 };

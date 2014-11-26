@@ -1,5 +1,6 @@
 ot.method = function(f) {
     'use strict';
+    ot.validate().that(ot.is(f).aFunction(), "You have to provide function");
 
     function noReturnStatement() {
         return f.toString().indexOf('return') < 0;
@@ -13,11 +14,6 @@ ot.method = function(f) {
             return true;
         }
         return false;
-    }
-
-    var getType = {};
-    if(!(f && getType.toString.call(f) === '[object Function]')) {
-        throw Error('f has to be function');
     }
 
     return {

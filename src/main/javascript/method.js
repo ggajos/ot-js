@@ -1,6 +1,6 @@
 ot.method = function(f) {
     'use strict';
-    ot.validate().that(ot.is(f).aFunction(), "You have to provide function");
+    ot.validate().that(ot.is(f).aFunction(), "You have to provide a function");
 
     function noReturnStatement() {
         return f.toString().indexOf('return') < 0;

@@ -1,22 +1,21 @@
 # ot-js
-## collection of small, reusable JavaScript components
+[![Build Status](https://travis-ci.org/ggajos/ot-js.svg?branch=master)](https://travis-ci.org/ggajos/ot-js)
 
-## Usage
+Goal of this library is to provide truly object oriented, reusable toolset of objects.
 
-For usage examples look at test results page: <link needed>
+### Usage
 
-## Development
+[Download ltest stable release](https://github.com/ggajos/ot-js/releases/latest) or use CDN:
 
-### Vision
-
-* Object Oriented
-
+```html
+<script src='//cdn.rawgit.com/ggajos/ot-js/releases/download/0.1.0/ot-js.min.js'></script>
+```
 ### Build
 
 ```sh
 $ mvn package
 ```
 
-It will produce final library under /target/javascript/script.js
+### Crafted by
 
-crafted by ***Open Tangerine***
+[![Build Status](http://opentangerine.com/img/logotype/logo.png)](https://travis-ci.org/ggajos/ot-js)

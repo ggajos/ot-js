@@ -13,6 +13,12 @@
                 return ot.string(undefined).describe();
             }).equals('<undefined>'),
             ot.test(function () {
+                return ot.string('').describe();
+            }).equals('<empty string>'),
+            ot.test(function () {
+                return ot.string('     ').describe();
+            }).equals('<blank string>'),
+            ot.test(function () {
                 return ot.string(true).describe();
             }).equals('true'),
             ot.test(function () {
@@ -26,7 +32,22 @@
             }).equals('4.5'),
             ot.test(function () {
                 return ot.string([1, 2, 3]).describe();
-            }).equals('list { elements: 1,2,3 }')
+            }).equals('list { elements: 1,2,3 }'),
+            ot.test(function () {
+                return ot.string(4.5).blank();
+            }).equals(false),
+            ot.test(function () {
+                return ot.string(false).blank();
+            }).equals(false),
+            ot.test(function () {
+                return ot.string('').blank();
+            }).equals(true),
+            ot.test(function () {
+                return ot.string('   ').blank();
+            }).equals(true),
+            ot.test(function () {
+                return ot.string('  a ').blank();
+            }).equals(false),
         ]
     });
 }());

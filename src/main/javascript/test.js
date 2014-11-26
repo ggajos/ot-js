@@ -16,11 +16,18 @@ ot.test = function(expression) {
         }
         return ot.testCase(expression, function() {
             var result = expression();
-            return ot.testResult(
-                ' === ' + (ot.is(result).notBlank() ? result : '<<blank>>'),
-                result === value,
-                ['returned [', result, '], expected [', value, ']'].join('')
-            );
+            var success = result === value;
+            if(success) {
+                return ot.testResult(
+                    [' === ', ot.string(result).describe()].join(''),
+                    success
+                );
+            } else {
+                return ot.testResult(
+                    [' === [', result, '] but expected is [', value, ']'].join(''),
+                    success
+                );
+            }
         });
     }
 
@@ -61,7 +68,7 @@ ot.testCase = function(expression, assertion) {
         run: run
     };
 };
-ot.testResult = function(name, success, failReason) {
+ot.testResult = function(name, success) {
     'use strict';
 
     function isSuccess() {
@@ -69,20 +76,11 @@ ot.testResult = function(name, success, failReason) {
     }
 
     function label() {
-        return name + ' / ' + reason();
-    }
-
-    function reason() {
-        if(success) {
-            return '';
-        } else {
-            return failReason;
-        }
+        return name;
     }
 
     return {
         label: label,
-        isSuccess: isSuccess,
-        reason: reason
+        isSuccess: isSuccess
     };
 };

@@ -36,6 +36,17 @@
             }).equals(false),
 
             ot.test(function () {
+                return ot.is(undefined).aNull();
+            }).equals(true),
+            ot.test(function () {
+                return ot.is(null).aNull();
+            }).equals(true),
+            ot.test(function () {
+                return ot.is('').aNull();
+            }).equals(false),
+
+
+            ot.test(function () {
                 return ot.is(1).aNumber();
             }).equals(true),
             ot.test(function () {

@@ -17,6 +17,10 @@ ot.is = function(it) {
         return nameEquals('[object Object]');
     }
 
+    function aNull() {
+        return it === undefined || it === null;
+    }
+
     function aNumber() {
         return nameEquals('[object Number]');
     }
@@ -30,7 +34,7 @@ ot.is = function(it) {
     }
 
     function notNull() {
-        return !(it === undefined || it === null);
+        return !aNull();
     }
 
     function nameEquals(string) {
@@ -41,6 +45,7 @@ ot.is = function(it) {
         aArray: aArray,
         aFunction: aFunction,
         aNumber: aNumber,
+        aNull: aNull,
         aBoolean: aBoolean,
         aObject: aObject,
         aString: aString,

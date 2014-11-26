@@ -77,16 +77,6 @@
             }).equals(false),
             ot.test(function () {
                 return ot.is(null).aObject();
-            }).equals(false),
-
-            ot.test(function () {
-                return ot.is('').notNull();
-            }).equals(true),
-            ot.test(function () {
-                return ot.is(null).notNull();
-            }).equals(false),
-            ot.test(function () {
-                return ot.is(undefined).notNull();
             }).equals(false)
         ]
     });

@@ -1,4 +1,3 @@
-* replaced notblank with string trim method
 * remove assertion class
 * make <<blank>> representations with more sense
 * move is.notBlank to ot.string

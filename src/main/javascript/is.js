@@ -29,10 +29,6 @@ ot.is = function(it) {
         return nameEquals('[object String]');
     }
 
-    function notNull() {
-        return !aNull();
-    }
-
     function nameEquals(string) {
         return Object.prototype.toString.call(it) === string;
     }
@@ -44,7 +40,6 @@ ot.is = function(it) {
         aNull: aNull,
         aBoolean: aBoolean,
         aObject: aObject,
-        aString: aString,
-        notNull: notNull
+        aString: aString
     };
 };

@@ -19,7 +19,7 @@ ot.test = function(expression) {
             return ot.testResult(
                 ' === ' + (ot.is(result).notBlank() ? result : '<<blank>>'),
                 result === value,
-                ['test returned [', result, '] but expected [', value, ']'].join('')
+                ['returned [', result, '], expected [', value, ']'].join('')
             );
         });
     }
@@ -74,7 +74,7 @@ ot.testResult = function(name, success, failReason) {
 
     function reason() {
         if(success) {
-            return ''
+            return '';
         } else {
             return failReason;
         }

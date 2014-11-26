@@ -2,31 +2,41 @@ ot.string = function (it) {
     'use strict';
 
     function blank() {
-        return ot.is(it).aString() && it.replace(/^\s+|\s+$/g, '') === '';
+        return trim() === '';
+    }
+
+    function trim() {
+        return value().replace(/^\s+|\s+$/g, '');
     }
 
     function describe() {
         if (it === undefined) {
             return '<undefined>';
         }
-        if(it === null) {
+        if (it === null) {
             return '<null>';
         }
         if (it === '') {
             return '<empty string>';
         }
-        if(blank()) {
+        if (blank()) {
             return '<blank string>';
         }
+        if (it === true || it === false) {
+            return ['<', it, '>'].join('');
+        }
         if (ot.is(it).aArray()) {
-            return '' + it;
+            return '[' + it + ']';
+        }
+        if (ot.is(it).aString()) {
+            return ['"', it.toString(), '"'].join('');
         }
         return it.toString();
     }
 
     function value() {
-        if(it === undefined || it === null) {
-            return ''
+        if (it === undefined || it === null) {
+            return '';
         } else {
             return '' + it;
         }
@@ -34,6 +44,7 @@ ot.string = function (it) {
 
     return {
         blank: blank,
+        trim: trim,
         describe: describe,
         value: value
     };

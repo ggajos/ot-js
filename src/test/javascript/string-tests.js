@@ -20,10 +20,10 @@
             }).equals('<blank string>'),
             ot.test(function () {
                 return ot.string(true).describe();
-            }).equals('true'),
+            }).equals('<true>'),
             ot.test(function () {
                 return ot.string(false).describe();
-            }).equals('false'),
+            }).equals('<false>'),
             ot.test(function () {
                 return ot.string(4).describe();
             }).equals('4'),
@@ -32,8 +32,14 @@
             }).equals('4.5'),
             ot.test(function () {
                 return ot.string([1, 2, 3]).describe();
-            }).equals('1,2,3'),
+            }).equals('[1,2,3]'),
+            ot.test(function () {
+                return ot.string('text').describe();
+            }).equals('"text"'),
 
+            ot.test(function () {
+                return ot.string().blank();
+            }).equals(true),
             ot.test(function () {
                 return ot.string(4.5).blank();
             }).equals(false),
@@ -80,6 +86,10 @@
             ot.test(function () {
                 return ot.string([1, 2, 3]).value();
             }).equals('1,2,3'),
+
+            ot.test(function () {
+                return ot.string(' a ').trim();
+            }).equals('a'),
         ]
     });
 }());

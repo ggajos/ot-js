@@ -1,6 +1,6 @@
 ot.cookie = function (name) {
     'use strict';
-    ot.assertion(name).check(ot.is(name).notBlank(),
+    ot.assertion(name).check(!ot.string(name).isBlank(),
         'Name of cookie should be provided');
 
     function write(value, date) {
@@ -22,7 +22,7 @@ ot.cookie = function (name) {
         var token = name + '=';
         var ca = document.cookie.split(';');
         for(var i=0; i<ca.length; i+= 1) {
-            var c = ca[i].replace(/^\s+|\s+$/g, '');
+            var c = ot.string(ca[i]).trim().value();
             if (c.indexOf(token) === 0) {
                 ot.log().debug('reading cookie: ' + c);
                 c = c.substring(token.length, c.length);
@@ -33,7 +33,7 @@ ot.cookie = function (name) {
     }
 
     function exists() {
-        return ot.is(read()).notBlank();
+        return !ot.string(read()).isBlank();
     }
 
     function remove() {

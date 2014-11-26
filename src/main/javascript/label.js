@@ -1,6 +1,6 @@
 ot.label = function(name) {
     'use strict';
-    ot.assertion(name).check(ot.is(name).notBlank(),
+    ot.assertion(name).check(!ot.string(name).isBlank(),
         'Label name cannot be blank');
 
     function print(properties) {

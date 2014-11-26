@@ -29,10 +29,6 @@ ot.is = function(it) {
         return nameEquals('[object String]');
     }
 
-    function notBlank() {
-        return aString() && it.replace(/^\s+|\s+$/g, '').length > 0;
-    }
-
     function notNull() {
         return !aNull();
     }
@@ -49,7 +45,6 @@ ot.is = function(it) {
         aBoolean: aBoolean,
         aObject: aObject,
         aString: aString,
-        notBlank: notBlank,
         notNull: notNull
     };
 };

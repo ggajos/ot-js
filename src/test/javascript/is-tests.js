@@ -87,19 +87,6 @@
             }).equals(false),
             ot.test(function () {
                 return ot.is(undefined).notNull();
-            }).equals(false),
-
-            ot.test(function () {
-                return ot.is('  a  ').notBlank();
-            }).equals(true),
-            ot.test(function () {
-                return ot.is('a').notBlank();
-            }).equals(true),
-            ot.test(function () {
-                return ot.is('').notBlank();
-            }).equals(false),
-            ot.test(function () {
-                return ot.is(null).notBlank();
             }).equals(false)
         ]
     });

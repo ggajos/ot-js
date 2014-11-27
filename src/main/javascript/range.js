@@ -1,7 +1,7 @@
 ot.range = function(a, b) {
     'use strict';
-    ot.validate(!ot.is(a).aNull()).isTrue('Range start cannot be null');
-    ot.validate(!ot.is(b).aNull()).isTrue('Range end cannot be null');
+    ot.validate(a).notNull();
+    ot.validate(b).notNull();
     var min = a <= b ? a : b;
     var max = a <= b ? b : a;
 

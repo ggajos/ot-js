@@ -1,6 +1,4 @@
 ## 0.1.1
-* replace assertions with simplified ones
-* refactor ot.label.print, introduce map helper
 * refactor cookie class
 ## Backlog
 * add more verbosity to logger

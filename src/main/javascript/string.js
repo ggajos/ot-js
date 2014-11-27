@@ -30,6 +30,14 @@ ot.string = function (it) {
         return it.toString();
     }
 
+    function contains(part) {
+        return value().indexOf(part) >= 0;
+    }
+
+    function startsWith(part) {
+        return value().indexOf(part) === 0;
+    }
+
     function value() {
         if (it === undefined || it === null) {
             return '';
@@ -43,6 +51,8 @@ ot.string = function (it) {
         trim: trim,
         wrap: wrap,
         describe: describe,
+        contains: contains,
+        startsWith: startsWith,
         value: value
     };
 };

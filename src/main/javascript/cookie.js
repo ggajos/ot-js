@@ -21,8 +21,9 @@ ot.cookie = function (name) {
         var token = name + '=';
         var ca = document.cookie.split(';');
         for(var i=0; i<ca.length; i+= 1) {
-            var c = ot.string(ca[i]).trim().value();
-            if (c.indexOf(token) === 0) {
+            var s = ot.string(ca[i]).trim();
+            if (s.startsWith(token)) {
+                var c = s.value();
                 ot.log().debug('reading cookie: ' + c);
                 c = c.substring(token.length, c.length);
                 return c;

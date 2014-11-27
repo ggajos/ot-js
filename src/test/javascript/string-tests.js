@@ -92,6 +92,26 @@
             }).equals('a'),
 
             ot.test(function () {
+                return ot.string('test').contains('a');
+            }).equals(false),
+            ot.test(function () {
+                return ot.string('test').contains('t');
+            }).equals(true),
+            ot.test(function () {
+                return ot.string().contains('t');
+            }).equals(false),
+
+            ot.test(function () {
+                return ot.string('test').startsWith('a');
+            }).equals(false),
+            ot.test(function () {
+                return ot.string('Xtest').startsWith('Xte');
+            }).equals(true),
+            ot.test(function () {
+                return ot.string().startsWith('t');
+            }).equals(false),
+
+            ot.test(function () {
                 return ot.string('a').wrap('X').value();
             }).equals('XaX'),
             ot.test(function () {

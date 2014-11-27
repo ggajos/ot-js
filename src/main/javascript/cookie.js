@@ -21,12 +21,10 @@ ot.cookie = function (name) {
         var token = name + '=';
         var ca = document.cookie.split(';');
         for(var i=0; i<ca.length; i+= 1) {
-            var s = ot.string(ca[i]).trim();
-            if (s.startsWith(token)) {
-                var c = s.value();
-                ot.log().debug('reading cookie: ' + c);
-                c = c.substring(token.length, c.length);
-                return c;
+            var entry = ot.string(ca[i]).trim();
+            if (entry.startsWith(token)) {
+                ot.log().debug('reading cookie: ' + entry.describe());
+                return entry.substringAfter(token).value();
             }
         }
         return null;

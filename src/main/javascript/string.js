@@ -38,6 +38,15 @@ ot.string = function (it) {
         return value().indexOf(part) === 0;
     }
 
+    function substringAfter(part) {
+        var v = value();
+        var index = v.indexOf(part);
+        if(index >= 0) {
+            v = v.substring(index + part.length, v.length);
+        }
+        return ot.string(v);
+    }
+
     function value() {
         if (it === undefined || it === null) {
             return '';
@@ -53,6 +62,7 @@ ot.string = function (it) {
         describe: describe,
         contains: contains,
         startsWith: startsWith,
+        substringAfter: substringAfter,
         value: value
     };
 };

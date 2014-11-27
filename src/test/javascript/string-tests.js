@@ -112,6 +112,26 @@
             }).equals(false),
 
             ot.test(function () {
+                return ot.string(null).substringAfter('abc').value();
+            }).equals(''),
+            ot.test(function () {
+                return ot.string('').substringAfter('').value();
+            }).equals(''),
+            ot.test(function () {
+                return ot.string('abcdef').substringAfter('abc').value();
+            }).equals('def'),
+            ot.test(function () {
+                return ot.string('abcdef').substringAfter('f').value();
+            }).equals(''),
+            ot.test(function () {
+                return ot.string('abcdef').substringAfter('a').value();
+            }).equals('bcdef'),
+            ot.test(function () {
+                return ot.string('abcdef').substringAfter('X').value();
+            }).equals('abcdef'),
+
+
+            ot.test(function () {
                 return ot.string('a').wrap('X').value();
             }).equals('XaX'),
             ot.test(function () {

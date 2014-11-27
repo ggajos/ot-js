@@ -19,14 +19,14 @@ ot.cookie = function (name) {
 
     function read() {
         var token = name + '=';
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i+= 1) {
-            var entry = ot.string(ca[i]).trim();
-            if (entry.startsWith(token)) {
-                ot.log().debug('reading cookie: ' + entry.describe());
-                return entry.substringAfter(token).value();
-            }
+        var item = ot.list(document.cookie.split(';')).find(function(it) {
+            return ot.string(it).trim().startsWith(token);
+        });
+        if(item) {
+            ot.log().debug('reading cookie: ' + item);
+            return ot.string(item).substringAfter(token).value();
         }
+        ot.log().debug('unable to find cookie for token: ' + token);
         return null;
     }
 

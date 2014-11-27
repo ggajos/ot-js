@@ -1,9 +1,11 @@
 ot.list = function(jsArray) {
     'use strict';
-    ot.validate(ot.is(jsArray).aArray()).isTrue('Argument have to be an array');
+    ot.validate(ot.is(jsArray).aArray())
+        .isTrue('Argument have to be an array');
 
     function random() {
-        ot.validate(jsArray.length > 0).isTrue('Array have to contain at least one element');
+        ot.validate(jsArray.length > 0)
+            .isTrue('Array have to contain at least one element');
         return jsArray[ot.range(0, jsArray.length).random()];
     }
 

@@ -1,3 +1,4 @@
+* simplify assertions
 * refactor ot.label.print, introduce map helper
 * refactor cookie class
 * add more verbosity to logger

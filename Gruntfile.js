@@ -30,7 +30,13 @@ module.exports = function (grunt) {
             }
         },
         qunit: {
-            all: ['test/qunit/index.html']
+            all: {
+                options: {
+                    urls: [
+                        'http://localhost:8234/index.html'
+                    ]
+                }
+            }
         },
         connect: {
             server: {
@@ -62,4 +68,5 @@ module.exports = function (grunt) {
     // Default task(s).
     grunt.registerTask('default', ['concat', 'connect:server', 'watch']);
     grunt.registerTask('release', ['concat', 'uglify']);
+    grunt.registerTask('test', ['connect:server', 'qunit']);
 };

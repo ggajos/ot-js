@@ -8,15 +8,15 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['src/**/*.js'],
+                src: ['src/header.js', 'src/ot/**/*.js'],
                 dest: 'dist/<%= pkg.name %>.js'
             },
             testRelease: {
-                src: ['src/**/*.js'],
+                src: ['src/header.js', 'src/ot/**/*.js'],
                 dest: 'test/qunit/build/<%= pkg.name %>.js'
             },
             testSuite: {
-                src: ['test/unit/**/*.js'],
+                src: ['test/header.js', 'test/ot/**/*.js', 'test/testsuite.js'],
                 dest: 'test/qunit/build/<%= pkg.name %>-testsuite.js'
             }
         };
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
         grunt.loadNpmTasks('grunt-contrib-uglify');
         return {
             build: {
-                src: ['src/_header.js', 'src/**/*.js'],
+                src: ['src/header.js', 'src/**/*.js'],
                 dest: 'dist/<%= pkg.name %>.min.js'
             }
         };

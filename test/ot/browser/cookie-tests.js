@@ -2,6 +2,7 @@
     'use strict';
     tests.push({
         name: 'cookie',
+        module: 'browser',
         tests: [
             ot.test(function () {
                 ot.cookie('coo').write('value');

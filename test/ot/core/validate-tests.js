@@ -2,6 +2,7 @@
     'use strict';
     tests.push({
         name: 'validate',
+        module: 'core',
         tests: [
             ot.test(function () {
                 return ot.validate().isArray();

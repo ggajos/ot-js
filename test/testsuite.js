@@ -2,8 +2,8 @@
     'use strict';
     ot.logLevel.withNoLog(function() {
         tests.forEach(function (testGroup) {
-            QUnit.module(['ot', testGroup.name].join('.'));
-            QUnit.test(testGroup.name, function (assert) {
+            QUnit.module(testGroup.module);
+            QUnit.test('ot.' + testGroup.name, function (assert) {
                 testGroup.tests.forEach(function (testCase) {
                     if (testCase.run !== undefined) {
                         if (testGroup.before) {

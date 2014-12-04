@@ -2,6 +2,7 @@
     'use strict';
     tests.push({
         name: 'is',
+        module: 'core',
         tests: [
             ot.test(function () {
                 return ot.is([1, 2, 3]).aArray();

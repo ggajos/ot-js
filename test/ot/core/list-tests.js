@@ -7,6 +7,7 @@
     };
     tests.push({
         name: 'list',
+        module: 'core',
         tests: [
             ot.test(function () {
                 ifRandomReturnsZero();

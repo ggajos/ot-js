@@ -2,6 +2,7 @@
     'use strict';
     tests.push({
         name: 'label',
+        module: 'core',
         tests: [
             ot.test(function () {
                 return ot.label('name').print({

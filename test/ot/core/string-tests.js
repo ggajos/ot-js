@@ -2,6 +2,7 @@
     'use strict';
     tests.push({
         name: 'string',
+        module: 'core',
         tests: [
             ot.test(function () {
                 return ot.string().describe();

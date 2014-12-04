@@ -2,6 +2,7 @@
     'use strict';
     tests.push({
         name: 'method',
+        module: 'core',
         tests: [
             ot.test(function () {
                 return ot.method(function () {

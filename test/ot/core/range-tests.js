@@ -11,7 +11,8 @@
         };
     };
     tests.push({
-        name: 'range, (given random = 0)',
+        name: 'range',
+        module: 'core',
         before: function () {
             Math.random = function () {
                 return 0;

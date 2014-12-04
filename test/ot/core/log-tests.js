@@ -2,6 +2,7 @@
     'use strict';
     tests.push({
         name: 'log',
+        module: 'core',
         tests: [
             ot.test(function () {
                 ot.log().debug('debug level');

@@ -1,0 +1,33 @@
+{
+  "name": "ot-js",
+  "version": "0.0.2",
+  "description": "Initial description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ggajos/ot-js"
+  },
+  "keywords": [
+    "oo",
+    "core",
+    "commons"
+  ],
+  "author": "Grzegorz Gajos <grzegorz.gajos@opentangerine.com> (http://opentangerine.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ggajos/ot-js/issues"
+  },
+  "homepage": "https://github.com/ggajos/ot-js",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-qunit": "^0.5.2",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

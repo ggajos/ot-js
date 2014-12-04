@@ -3,4 +3,6 @@
 /*.ipr
 /*.iws
 
-target/
+/dist
+/test/qunit/build
+/node_modules

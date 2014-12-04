@@ -58,6 +58,8 @@
     "validthis"     : false,     // true: Tolerate using this in a non-constructor function
 
     "globals": {
+        "QUnit": true,
+        "module": true,
         "ot": true,
         "it": false,
         "expect": false,

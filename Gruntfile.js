@@ -1,5 +1,12 @@
 module.exports = function (grunt) {
+    'use strict';
 
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-qunit');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -21,9 +28,6 @@ module.exports = function (grunt) {
             }
         },
         uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            },
             build: {
                 src: ['src/_header.js', 'src/**/*.js'],
                 dest: 'dist/<%= pkg.name %>.min.js'
@@ -49,21 +53,19 @@ module.exports = function (grunt) {
         },
         watch: {
             test: {
-                files: ['src/**', 'test/unit/**'],
-                tasks: ['concat', 'jshint', 'qunit']
+                files: ['Gruntfile.js', 'src/**', 'test/unit/**', '.jshintrc'],
+                tasks: ['concat', 'jshint', 'test']
             }
         },
         jshint: {
+            options: {
+                jshintrc: true
+            },
             all: ['Gruntfile.js', 'src/**/*.js', 'test/unit/**/*.js']
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-qunit');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+
 
     // Default task(s).
     grunt.registerTask('default', ['concat', 'connect:server', 'watch']);

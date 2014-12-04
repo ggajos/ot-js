@@ -19,13 +19,13 @@ ot.test = function(expression) {
             var success = result === value;
             if(success) {
                 return ot.testResult(
-                    [' === ', ot.string(result).describe()].join(''),
+                    [' returns ', ot.string(result).describe()].join(''),
                     success
                 );
             } else {
                 return ot.testResult(
                     [
-                        ' === [', result,
+                        ' returns [', result,
                         '] but expected is [', value, ']'
                     ].join(''),
                     success
@@ -37,7 +37,7 @@ ot.test = function(expression) {
     function exception() {
         return ot.testCase(expression, function() {
             return ot.testResult(
-                'should throw exception',
+                'will throw exception',
                 ot.method(expression).isThrowingException()
             );
         });
@@ -63,7 +63,7 @@ ot.testCase = function(expression, assertion) {
     }
 
     function details() {
-        return '1<br/>2\n4';
+        return testName + assertion().label();
     }
 
     function run() {

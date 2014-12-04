@@ -38,15 +38,13 @@ ot.validate = function (it) {
 
     function throwError(condition, message) {
         if(condition) {
-            var error = [
+            throw new Error([
                 'The validated expression [',
                 ot.string(it).describe() ,
                 '] is ',
                 message,
                 '.'
-            ].join('');
-            ot.log().error(error);
-            throw new Error(error);
+            ].join(''));
         }
     }
 

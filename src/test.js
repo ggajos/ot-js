@@ -62,11 +62,16 @@ ot.testCase = function(expression, assertion) {
         return testName + assertion().label();
     }
 
+    function details() {
+        return '1<br/>2\n4';
+    }
+
     function run() {
         return assertion();
     }
 
     return {
+        details: details,
         name: name,
         run: run
     };

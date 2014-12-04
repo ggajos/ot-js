@@ -11,7 +11,10 @@
                     ot.log().debug('Executing ' + testCase.name());
                     var result = testCase.run();
                     QUnit.test(testCase.name(), function (assert) {
-                        assert.ok(true === result.isSuccess(), testCase.name());
+                        assert.ok(
+                            true === result.isSuccess(),
+                            testCase.details())
+                        ;
                     });
                     if (!result.isSuccess()) {
                         ot.logLevel.withLogDebug(function () {

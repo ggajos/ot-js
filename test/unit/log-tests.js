@@ -7,10 +7,14 @@
                 ot.log().debug('debug level');
             }).ok(),
             ot.test(function () {
-                ot.log().warning('warning level');
+                ot.logLevel.withNoLog(function() {
+                    ot.log().warning('warning level');
+                });
             }).ok(),
             ot.test(function () {
-                ot.log().error('error level');
+                ot.logLevel.withNoLog(function() {
+                    ot.log().error('error level');
+                });
             }).ok()
         ]
     });

@@ -42,7 +42,8 @@ ot.testSuite = function(args) {
     function readme() {
         var s = ot.string('#### ot.' + suiteName)
             .append(' - ' + description)
-            .append('\n');
+            .append('\n')
+            .append('```javascript\n');
         tests.forEach(function (testCase) {
             var line = testCase.name()
                 .replace(/^\s*|\s(?=\s)|\s*$/g, '')
@@ -51,7 +52,9 @@ ot.testSuite = function(args) {
                 .append(line)
                 .append('\n');
         });
-        return s.append('\n');
+        return s
+            .append('```')
+            .append('\n\n');
     }
 
     return {

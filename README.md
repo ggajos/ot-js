@@ -23,14 +23,17 @@ $ mvn package
 ### Documentation
 
 #### ot.cookie - Manipulate cookie objects in browser
+```javascript
     ot.cookie('coo').write('value'); ot.cookie('coo').read();  //  "value"
     ot.cookie('coo').write('value'); ot.cookie('coo').remove(); ot.cookie('coo').read();  //  <empty string>
     ot.cookie('coo').write('value'); ot.cookie('coo').exists();  //  <true>
     ot.cookie('coo').remove(); ot.cookie('coo').exists();  //  <false>
     ot.cookie(); will throw exception
     ot.cookie(''); will throw exception
+```
 
 #### ot.is - Check type of object
+```javascript
     ot.is([1, 2, 3]).aArray();  //  <true>
     ot.is('').aArray();  //  <false>
     ot.is(undefined).aArray();  //  <false>
@@ -53,14 +56,18 @@ $ mvn package
     ot.is( ).aObject();  //  <false>
     ot.is('').aObject();  //  <false>
     ot.is(null).aObject();  //  <false>
+```
 
 #### ot.label - Utility class
+```javascript
     ot.label('name').print( min: 10, max: -40 );  //  "name { min: 10, max: -40 }"
     ot.label('name').print();  //  "name { }"
     ot.label('name').print(null);  //  "name { }"
     ot.label(null).print(null); will throw exception
+```
 
 #### ot.list - Utility class
+```javascript
     ifRandomReturnsZero(); ot.list([7, 5, 97]).random();  //  7
     ifRandomReturnsZero(); ot.list(['a', 'b']).random();  //  "a"
     ifRandomReturnsZero(); ot.list([]).random(); will throw exception
@@ -73,16 +80,20 @@ $ mvn package
     ot.list([]).find(function (it) return it > 10; );  //  <null>
     ot.list([]).empty();  //  <true>
     ot.list([1]).empty();  //  <false>
+```
 
 #### ot.method - Utility class
+```javascript
     ot.method( throw Error(); ).isThrowingException();  //  <true>
     ot.method( ).isThrowingException();  //  <false>
     ot.method(''); will throw exception
     ot.method(); will throw exception
     ot.method( return 1; ).noReturnStatement();  //  <false>
     ot.method( 'nothing here'; ).noReturnStatement();  //  <true>
+```
 
 #### ot.range - Utility class
+```javascript
     ifRandomReturnsZero(); ot.range(-3, 7).random();  //  -3
     ifRandomReturnsZero(); ot.range(0, 1).random();  //  0
     ifRandomReturnsZero(); ot.range(1, 1).random();  //  1
@@ -94,8 +105,10 @@ $ mvn package
     ot.range('a'); will throw exception
     ot.range(); will throw exception
     ot.range(3, 7).describe();  //  "range { min: 3, max: 7 }"
+```
 
 #### ot.string - Utility class
+```javascript
     ot.string('1').append('2').value();  //  "12"
     ot.string('1').append().value();  //  "1"
     ot.string('1').append(null).value();  //  "1"
@@ -141,8 +154,10 @@ $ mvn package
     ot.string('abcdef').substringAfter('X').value();  //  "abcdef"
     ot.string('a').wrap('X').value();  //  "XaX"
     ot.string('a').wrap().value();  //  "a"
+```
 
 #### ot.validate - Utility class
+```javascript
     ot.validate().isArray(); will throw exception
     ot.validate([]).isArray(); silent execution
     ot.validate().isBoolean(); will throw exception
@@ -164,3 +179,4 @@ $ mvn package
     ot.validate(undefined).notNull(); will throw exception
     ot.validate('').notNull(); silent execution
     ot.validate([]).notNull(); silent execution
+```

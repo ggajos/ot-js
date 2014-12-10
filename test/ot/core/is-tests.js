@@ -1,8 +1,7 @@
 (function () {
     'use strict';
-    tests.push({
+    ot.testModule('code').addSuite(ot.testSuite({
         name: 'is',
-        module: 'core',
         tests: [
             ot.test(function () {
                 return ot.is([1, 2, 3]).aArray();
@@ -71,7 +70,8 @@
                 return ot.is({a: 'a'}).aObject();
             }).equals(true),
             ot.test(function () {
-                return ot.is(function() {}).aObject();
+                return ot.is(function () {
+                }).aObject();
             }).equals(false),
             ot.test(function () {
                 return ot.is('').aObject();
@@ -80,5 +80,5 @@
                 return ot.is(null).aObject();
             }).equals(false)
         ]
-    });
+    }));
 }());

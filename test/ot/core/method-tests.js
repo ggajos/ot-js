@@ -1,8 +1,7 @@
-(function () {
+(function() {
     'use strict';
-    tests.push({
+    ot.testModule('core').addSuite(ot.testSuite({
         name: 'method',
-        module: 'core',
         tests: [
             ot.test(function () {
                 return ot.method(function () {
@@ -30,5 +29,5 @@
                 }).noReturnStatement();
             }).equals(true)
         ]
-    });
+    }));
 }());

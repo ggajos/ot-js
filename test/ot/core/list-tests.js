@@ -5,9 +5,8 @@
             return 0;
         };
     };
-    tests.push({
+    ot.testModule('core').addSuite(ot.testSuite({
         name: 'list',
-        module: 'core',
         tests: [
             ot.test(function () {
                 ifRandomReturnsZero();
@@ -61,5 +60,5 @@
                 return ot.list([1]).empty();
             }).equals(false)
         ]
-    });
+    }));
 }());

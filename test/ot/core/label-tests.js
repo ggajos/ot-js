@@ -1,8 +1,7 @@
 (function() {
     'use strict';
-    tests.push({
+    ot.testModule('core').addSuite(ot.testSuite({
         name: 'label',
-        module: 'core',
         tests: [
             ot.test(function () {
                 return ot.label('name').print({
@@ -20,5 +19,5 @@
                 return ot.label(null).print(null);
             }).exception()
         ]
-    });
+    }));
 }());

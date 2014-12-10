@@ -1,8 +1,7 @@
 (function() {
     'use strict';
-    tests.push({
+    ot.testModule('core').addSuite(ot.testSuite({
         name: 'log',
-        module: 'core',
         tests: [
             ot.test(function () {
                 ot.log().debug('debug level');
@@ -18,5 +17,5 @@
                 });
             }).ok()
         ]
-    });
+    }));
 }());

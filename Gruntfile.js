@@ -12,11 +12,10 @@ module.exports = function (grunt) {
                 dest: 'dist/<%= pkg.name %>.js'
             },
             testRelease: {
-                src: ['src/header.js', 'src/ot/**/*.js'],
-                dest: 'test/qunit/build/<%= pkg.name %>.js'
-            },
-            testSuite: {
-                src: ['test/header.js', 'test/ot/**/*.js', 'test/testsuite.js'],
+                src: [
+                    'src/header.js', 'src/ot/**/*.js',
+                    'test/header.js', 'test/ot/**/*.js', 'test/runner.js'
+                ],
                 dest: 'test/qunit/build/<%= pkg.name %>-testsuite.js'
             }
         };
@@ -64,7 +63,12 @@ module.exports = function (grunt) {
                 options: {
                     atBegin: ['qunit']
                 },
-                files: ['Gruntfile.js', 'src/**', 'test/unit/**', '.jshintrc'],
+                files: [
+                    'Gruntfile.js',
+                    'src/**',
+                    'test/qunit/**', 'test/ot/**/*.js', 'test/*.js',
+                    '.jshintrc'
+                ],
                 tasks: ['concat', 'jshint', 'qunit']
             }
         };

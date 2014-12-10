@@ -10,9 +10,8 @@
             return 1;
         };
     };
-    tests.push({
+    ot.testModule('core').addSuite(ot.testSuite({
         name: 'range',
-        module: 'core',
         before: function () {
             Math.random = function () {
                 return 0;
@@ -58,5 +57,5 @@
                 return ot.range(3, 7).describe();
             }).equals('range { min: 3, max: 7 }')
         ]
-    });
+    }));
 }());

@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    tests.push({
+    ot.testModule('cookie').addSuite(ot.testSuite({
         name: 'cookie',
         module: 'browser',
         tests: [
@@ -28,5 +28,5 @@
                 return ot.cookie('');
             }).exception()
         ]
-    });
+    }));
 }());

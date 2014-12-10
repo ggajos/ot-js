@@ -3,6 +3,16 @@
     tests.add(ot.testModule('core').addSuite(ot.testSuite({
         name: 'string',
         tests: [
+            ot.test(function() {
+                return ot.string('1').append('2').value();
+            }).equals('12'),
+            ot.test(function() {
+                return ot.string('1').append().value();
+            }).equals('1'),
+            ot.test(function() {
+                return ot.string('1').append(null).value();
+            }).equals('1'),
+
             ot.test(function () {
                 return ot.string().describe();
             }).equals('<undefined>'),

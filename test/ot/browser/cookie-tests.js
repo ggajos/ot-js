@@ -1,8 +1,9 @@
 (function () {
     'use strict';
-    ot.testModule('cookie').addSuite(ot.testSuite({
+    tests.add(ot.testModule('cookie').addSuite(ot.testSuite({
         name: 'cookie',
         module: 'browser',
+        description: 'Manipulate cookie objects in browser',
         tests: [
             ot.test(function () {
                 ot.cookie('coo').write('value');
@@ -28,5 +29,5 @@
                 return ot.cookie('');
             }).exception()
         ]
-    }));
+    })));
 }());

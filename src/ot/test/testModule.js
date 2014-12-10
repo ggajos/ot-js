@@ -17,11 +17,11 @@ ot.testModule = function(name) {
     }
 
     function readme() {
-        var result = ot.readme();
+        var s = ot.string();
         suits.forEach(function (suite) {
-            result = readme.h(1, 'ot.' + suite.name());
+            s = s.append(suite.readme().value());
         });
-        return result;
+        return s;
     }
 
     var self = {

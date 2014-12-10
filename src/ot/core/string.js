@@ -1,6 +1,10 @@
 ot.string = function (it) {
     'use strict';
 
+    function append(text) {
+        return ot.string(value() + ot.string(text).value());
+    }
+
     function isBlank() {
         return trim().value() === '';
     }
@@ -56,6 +60,7 @@ ot.string = function (it) {
     }
 
     return {
+        append: append,
         isBlank: isBlank,
         trim: trim,
         wrap: wrap,

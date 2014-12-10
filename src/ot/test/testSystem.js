@@ -15,11 +15,11 @@ ot.testSystem = function() {
     }
 
     function readme() {
-        var result = ot.readme();
+        var s = ot.string();
         modules.forEach(function (it) {
-            result = result.appendReadme(it.readme());
+            s = s.append(it.readme().value());
         });
-        return result;
+        return s;
     }
 
     return {

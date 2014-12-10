@@ -1,7 +1,8 @@
 (function () {
     'use strict';
-    tests.add(ot.testModule('code').addSuite(ot.testSuite({
+    tests.add(ot.testModule('core').addSuite(ot.testSuite({
         name: 'is',
+        description: 'Check type of object',
         tests: [
             ot.test(function () {
                 return ot.is([1, 2, 3]).aArray();

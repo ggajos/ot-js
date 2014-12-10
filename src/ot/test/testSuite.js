@@ -6,6 +6,7 @@ ot.testSuite = function(args) {
     var suiteName = args.name;
     var tests = args.tests;
     var before = args.before || function() {};
+    var description = args.description || 'Utility class';
 
     function name() {
         return suiteName;
@@ -38,8 +39,24 @@ ot.testSuite = function(args) {
         });
     }
 
+    function readme() {
+        var s = ot.string('#### ot.' + suiteName)
+            .append(' - ' + description)
+            .append('\n');
+        tests.forEach(function (testCase) {
+            var line = testCase.name()
+                .replace(/^\s*|\s(?=\s)|\s*$/g, '')
+                .replace(/returns/g, ' // ');
+            s = s.append('    ')
+                .append(line)
+                .append('\n');
+        });
+        return s.append('\n');
+    }
+
     return {
         name: name,
-        runQunit: runQunit
+        runQunit: runQunit,
+        readme: readme
     };
 };

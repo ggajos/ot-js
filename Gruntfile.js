@@ -14,7 +14,7 @@ module.exports = function (grunt) {
             testRelease: {
                 src: [
                     'src/header.js', 'src/ot/**/*.js',
-                    'test/header.js', 'test/ot/**/*.js', 'test/runner.js'
+                    'test/header.js', 'test/ot/**/*.js'
                 ],
                 dest: 'test/qunit/build/<%= pkg.name %>-testsuite.js'
             }

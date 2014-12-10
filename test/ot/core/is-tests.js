@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    ot.testModule('code').addSuite(ot.testSuite({
+    tests.add(ot.testModule('code').addSuite(ot.testSuite({
         name: 'is',
         tests: [
             ot.test(function () {
@@ -80,5 +80,5 @@
                 return ot.is(null).aObject();
             }).equals(false)
         ]
-    }));
+    })));
 }());

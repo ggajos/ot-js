@@ -1,4 +1,3 @@
 /* exported tests */
 /* jshint -W079 */
-var tests = [];
-var testModules = [];
+var tests = ot.testSystem();

@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    ot.testModule('core').addSuite(ot.testSuite({
+    tests.add(ot.testModule('core').addSuite(ot.testSuite({
         name: 'label',
         tests: [
             ot.test(function () {
@@ -19,5 +19,5 @@
                 return ot.label(null).print(null);
             }).exception()
         ]
-    }));
+    })));
 }());

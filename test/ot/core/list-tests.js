@@ -5,7 +5,7 @@
             return 0;
         };
     };
-    ot.testModule('core').addSuite(ot.testSuite({
+    tests.add(ot.testModule('core').addSuite(ot.testSuite({
         name: 'list',
         tests: [
             ot.test(function () {
@@ -60,5 +60,5 @@
                 return ot.list([1]).empty();
             }).equals(false)
         ]
-    }));
+    })));
 }());

@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    ot.testModule('core').addSuite(ot.testSuite({
+    tests.add(ot.testModule('core').addSuite(ot.testSuite({
         name: 'string',
         tests: [
             ot.test(function () {
@@ -138,5 +138,5 @@
                 return ot.string('a').wrap().value();
             }).equals('a'),
         ]
-    }));
+    })));
 }());

@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    ot.testModule('core').addSuite(ot.testSuite({
+    tests.add(ot.testModule('core').addSuite(ot.testSuite({
         name: 'method',
         tests: [
             ot.test(function () {
@@ -29,5 +29,5 @@
                 }).noReturnStatement();
             }).equals(true)
         ]
-    }));
+    })));
 }());

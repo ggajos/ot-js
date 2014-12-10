@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    ot.testModule('core').addSuite(ot.testSuite({
+    tests.add(ot.testModule('core').addSuite(ot.testSuite({
         name: 'validate',
         module: 'core',
         tests: [
@@ -76,5 +76,5 @@
                 return ot.validate([]).notNull();
             }).ok(),
         ]
-    }));
+    })));
 }());

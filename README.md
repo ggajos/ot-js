@@ -18,7 +18,7 @@ $ mvn package
 
 ### Crafted by
 
-[![Build Status](http://opentangerine.com/img/logotype/logo.png)](https://travis-ci.org/ggajos/ot-js)
+[![Build Status](http://opentangerine.com/img/logotype/logo.png)](http://opentangerine.com)
 
 ### Documentation
 

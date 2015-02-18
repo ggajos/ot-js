@@ -1,7 +1,7 @@
 {
   "name": "ot-js",
   "version": "0.0.2",
-  "description": "Initial description",
+  "description": "Goal of this library is to provide truly object oriented, reusable toolset of objects.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -13,12 +13,12 @@ Goal of this library is to provide truly object oriented, reusable toolset of ob
 ### Build
 
 ```sh
-$ mvn package
+$ grunt release
 ```
 
 ### Crafted by
 
-[![Build Status](http://opentangerine.com/img/logotype/logo.png)](http://opentangerine.com)
+[![UWS.IE](http://uws-software-service.com/images/uws_logo.png)](http://uws.ie)
 
 ### Documentation
 

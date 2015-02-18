@@ -96,5 +96,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', ['concat', 'connect:server', 'watch']);
     grunt.registerTask('release', ['concat', 'uglify']);
-    grunt.registerTask('test', ['connect:server', 'qunit']);
+    grunt.registerTask('test', ['concat', 'connect:server', 'qunit']);
 };

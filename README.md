@@ -24,7 +24,7 @@ $ grunt test
 
 ### Crafted by
 
-[![UWS.IE](http://uws-software-service.com/images/uws_logo.png)](http://uws.ie)
+[![UWS.IE](http://opentangerine.com/img/logotype/logo.png)](http://opentangerine.com)
 
 ### Documentation
 

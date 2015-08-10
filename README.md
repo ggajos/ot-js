@@ -24,7 +24,7 @@ $ grunt test
 
 ### Crafted by
 
-[![UWS.IE](http://opentangerine.com/img/logotype/logo.png)](http://opentangerine.com)
+[![Open Tangerine](http://opentangerine.com/img/logotype/logo.png)](http://opentangerine.com)
 
 ### Documentation
 
